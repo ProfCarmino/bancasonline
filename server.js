@@ -6,6 +6,9 @@ import { ref, get, set } from "firebase/database"
 
 // iniciando o express
 const app = express();
+const port = process.env.PORT ||  3000; 
+
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -75,6 +78,6 @@ app.delete('/bandas/:id', function (req, res) {
 })
 
 
-app.listen(3000, function () {
-    console.log("Servidor rodando na porta 3000 ...");
+app.listen(port, function () {
+    console.log("Aplicação está rodando ...");
 })
