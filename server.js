@@ -16,13 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 // Rota raiz direciona para a pasta front
 // app.use("/", express.static("./front"))
 
-
-app.get('/bandas', function (req, res) {
+app.get('/bancas', function (req, res) {
     // Pega uma referência para o caminho /bandas
-    let bandasRef = ref(database, "/bandas")
+    let bandasRef = ref(database, "/bancas")
     get(bandasRef).then((snap) => {
         let listaBandas = snap.val()
-        console.log("listaBandas", listaBandas);
         return res.status(200).json(listaBandas)
     })
 })
